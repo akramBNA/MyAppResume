@@ -1,15 +1,32 @@
-import { View, Text } from "react-native";
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+// Import components
+import LandingPage from './src/components/LandingPage';
+import ContactDetails from './src/components/ContactDetails';
+import Education from './src/components/Education';
+import Experience from './src/components/Experience';
+import Skills from './src/components/Skills';
+import Certificates from './src/components/Certificates';
+import Languages from './src/components/Languages';
+import ContactForm from './src/components/ContactForm';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="LandingPage">
+        <Drawer.Screen name="LandingPage" component={LandingPage} />
+        <Drawer.Screen name="Contact Details" component={ContactDetails} />
+        <Drawer.Screen name="Education" component={Education} />
+        <Drawer.Screen name="Experience" component={Experience} />
+        <Drawer.Screen name="Skills" component={Skills} />
+        <Drawer.Screen name="Certificates" component={Certificates} />
+        <Drawer.Screen name="Languages" component={Languages} />
+        <Drawer.Screen name="Contact Me" component={ContactForm} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
