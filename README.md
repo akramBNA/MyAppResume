@@ -8,10 +8,10 @@ This is a cross-platform React Native mobile application designed to showcase my
 - 🔗 Links to social profiles & contact details
 
 ## Tech Stack
-Framework: React Native
-Navigation: React Navigation
-State Management: (TBD, Redux or Context API)
-Backend: (TBD, Firebase, Node.js, or other)
+- Framework: React Native
+- Navigation: React Navigation
+- State Management: (TBD, Redux or Context API)
+- Backend: (TBD, Firebase, Node.js, or other)
 
 ## Installation & Setup
 1. Clone the repo.
