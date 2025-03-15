@@ -2,7 +2,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-// Import components
 import LandingPage from './src/components/LandingPage';
 import ContactDetails from './src/components/ContactDetails';
 import Education from './src/components/Education';

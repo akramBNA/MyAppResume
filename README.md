@@ -2,10 +2,11 @@
 This is a cross-platform React Native mobile application designed to showcase my professional portfolio.
 
 ## Features (To be expanded as the app evolves)
-📌 Display professional experience & projects
-🎨 Modern and responsive UI
-📱 Works on both iOS and Android
-🔗 Links to social profiles & contact details
+- 📌 Display professional experience & projects
+- 🎨 Modern and responsive UI
+- 📱 Works on both iOS and Android
+- 🔗 Links to social profiles & contact details
+
 ## Tech Stack
 Framework: React Native
 Navigation: React Navigation
