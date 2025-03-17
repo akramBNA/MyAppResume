@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 
 const ContactDetails = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Phone: +216 24 824 361</Text>
       <Text>Email: akrambenaoun1993@gmail.com</Text>
       <Text>Address: Ariana, Tunisia</Text>
@@ -11,5 +11,11 @@ const ContactDetails = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 20
+  },
+});
 
 export default ContactDetails;
