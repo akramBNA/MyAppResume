@@ -1,11 +1,11 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
 const Certificates = () => {
   return (
-<>
-<div>Works!</div>
-</>
+    <View>
+      <Text>component works!</Text>
+    </View>
   );
 };
 
