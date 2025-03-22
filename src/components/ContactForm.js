@@ -41,7 +41,6 @@ const ContactMe = () => {
         <Text style={styles.label}>First Name</Text>
         <TextInput
           style={styles.input}
-          placeholder="Your First Name"
           value={formik.values.firstName}
           onChangeText={formik.handleChange("firstName")}
           onBlur={formik.handleBlur("firstName")}
@@ -51,7 +50,6 @@ const ContactMe = () => {
         <Text style={styles.label}>Last Name</Text>
         <TextInput
           style={styles.input}
-          placeholder="Your Last Name"
           value={formik.values.lastName}
           onChangeText={formik.handleChange("lastName")}
           onBlur={formik.handleBlur("lastName")}
@@ -61,7 +59,6 @@ const ContactMe = () => {
         <Text style={styles.label}>Subject</Text>
         <TextInput
           style={styles.input}
-          placeholder="Subject"
           value={formik.values.subject}
           onChangeText={formik.handleChange("subject")}
           onBlur={formik.handleBlur("subject")}
@@ -71,7 +68,6 @@ const ContactMe = () => {
         <Text style={styles.label}>Email</Text>
         <TextInput
           style={styles.input}
-          placeholder="Your Email"
           keyboardType="email-address"
           value={formik.values.email}
           onChangeText={formik.handleChange("email")}
@@ -82,7 +78,6 @@ const ContactMe = () => {
         <Text style={styles.label}>Message</Text>
         <TextInput
           style={[styles.input, { height: 100, textAlignVertical: "top" }]}
-          placeholder="Your Message"
           multiline
           value={formik.values.message}
           onChangeText={formik.handleChange("message")}
