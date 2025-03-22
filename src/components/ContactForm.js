@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, ScrollView, ActivityIndicator, Alert } from "react-native";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "@env";
 
 const ContactMe = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,11 +23,28 @@ const ContactMe = () => {
       email: Yup.string().email("Invalid email").required("Email is required"),
       message: Yup.string().min(10, "Message is too short").required("Message is required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       setIsLoading(true);
-      console.log("Form submitted: ", values);
-      // Handle email sending logic here
-      setTimeout(() => setIsLoading(false), 2000);
+
+      const emailParams = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        subject: values.subject,
+        email: values.email,
+        message: values.message,
+      };
+
+      emailjs
+        .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailParams, EMAILJS_PUBLIC_KEY)
+        .then(() => {
+          Alert.alert("Success", "Your message has been sent!");
+          resetForm();
+          setIsLoading(false);
+        })
+        .catch(() => {
+          Alert.alert("Error", "There was an issue sending your message. Please try again.");
+          setIsLoading(false);
+        });
     },
   });
 
@@ -38,52 +57,20 @@ const ContactMe = () => {
       {isLoading && <ActivityIndicator size="large" color="#6200ee" style={{ marginBottom: 20 }} />}
 
       <View>
-        <Text style={styles.label}>First Name</Text>
-        <TextInput
-          style={styles.input}
-          value={formik.values.firstName}
-          onChangeText={formik.handleChange("firstName")}
-          onBlur={formik.handleBlur("firstName")}
-        />
-        {formik.touched.firstName && formik.errors.firstName && <Text style={styles.error}>{formik.errors.firstName}</Text>}
-
-        <Text style={styles.label}>Last Name</Text>
-        <TextInput
-          style={styles.input}
-          value={formik.values.lastName}
-          onChangeText={formik.handleChange("lastName")}
-          onBlur={formik.handleBlur("lastName")}
-        />
-        {formik.touched.lastName && formik.errors.lastName && <Text style={styles.error}>{formik.errors.lastName}</Text>}
-
-        <Text style={styles.label}>Subject</Text>
-        <TextInput
-          style={styles.input}
-          value={formik.values.subject}
-          onChangeText={formik.handleChange("subject")}
-          onBlur={formik.handleBlur("subject")}
-        />
-        {formik.touched.subject && formik.errors.subject && <Text style={styles.error}>{formik.errors.subject}</Text>}
-
-        <Text style={styles.label}>Email</Text>
-        <TextInput
-          style={styles.input}
-          keyboardType="email-address"
-          value={formik.values.email}
-          onChangeText={formik.handleChange("email")}
-          onBlur={formik.handleBlur("email")}
-        />
-        {formik.touched.email && formik.errors.email && <Text style={styles.error}>{formik.errors.email}</Text>}
-
-        <Text style={styles.label}>Message</Text>
-        <TextInput
-          style={[styles.input, { height: 100, textAlignVertical: "top" }]}
-          multiline
-          value={formik.values.message}
-          onChangeText={formik.handleChange("message")}
-          onBlur={formik.handleBlur("message")}
-        />
-        {formik.touched.message && formik.errors.message && <Text style={styles.error}>{formik.errors.message}</Text>}
+        {["firstName", "lastName", "subject", "email", "message"].map((field) => (
+          <View key={field}>
+            <Text style={styles.label}>{field.charAt(0).toUpperCase() + field.slice(1)}</Text>
+            <TextInput
+              style={[styles.input, field === "message" && { height: 100, textAlignVertical: "top" }]}
+              value={formik.values[field]}
+              onChangeText={formik.handleChange(field)}
+              onBlur={formik.handleBlur(field)}
+              keyboardType={field === "email" ? "email-address" : "default"}
+              multiline={field === "message"}
+            />
+            {formik.touched[field] && formik.errors[field] && <Text style={styles.error}>{formik.errors[field]}</Text>}
+          </View>
+        ))}
       </View>
 
       <TouchableOpacity style={styles.button} onPress={formik.handleSubmit} disabled={isLoading}>
