@@ -13,7 +13,7 @@ const AboutMe = () => {
           </View>
         )}
         <Image
-          source={require("../../assets/profile_picture.png")}
+          source={require("../../assets/profile_picture/profile_picture.png")}
           style={[styles.image, { opacity: imageLoaded ? 1 : 0 }]}
           onLoad={() => setImageLoaded(true)}
         />
