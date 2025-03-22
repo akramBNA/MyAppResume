@@ -17,4 +17,18 @@ This is a cross-platform React Native mobile application designed to showcase my
 1. Clone the repo.
 2. Ensure you have Node.js, React Native CLI, and required dependencies installed:
 
+## Screenshots:
+
+### About Me:
+
+![About Me Screen](assets/screenshots/screenshot_1.png)
+
+### Menu:
+
+![Menu Screen](assets/screenshots/screenshot_2.png)
+
+### Contatct Details:
+
+![Contatct Details Screen](assets/screenshots/screenshot_3.png)
+
 ## THIS APP IS STILL IN DEVELOPMENT PHASE!
