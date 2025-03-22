@@ -8,8 +8,8 @@ import Experience from './src/components/Experience';
 import Skills from './src/components/Skills';
 import Certificates from './src/components/Certificates';
 import Languages from './src/components/Languages';
-import ContactForm from './src/components/ContactForm';
 import AboutMe from './src/components/AboutMe';
+import ContactMe from './src/components/ContactMe';
 
 const Drawer = createDrawerNavigator();
 
@@ -24,7 +24,7 @@ export default function App() {
         <Drawer.Screen name="Skills" component={Skills} />
         <Drawer.Screen name="Certificates" component={Certificates} />
         <Drawer.Screen name="Languages" component={Languages} />
-        <Drawer.Screen name="Contact Me" component={ContactForm} />
+        <Drawer.Screen name="Contact Me" component={ContactMe} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
