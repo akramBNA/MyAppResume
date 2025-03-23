@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   imageWrapper: {
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     borderRadius: 75,
     overflow: "hidden",
     marginBottom: 20,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   description: {
-    fontSize: 18,
+    fontSize: 20,
     color: "#ccc",
     textAlign: "center",
     maxWidth: 300,
