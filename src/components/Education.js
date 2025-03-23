@@ -9,7 +9,7 @@ const educationData = [
   {
     school: "RebootKamp Tunisia (RBK)",
     date: "Oct 2022 - Mar 2023",
-    description: "Certificate in Full Stack JavaScript Web Development",
+    description: "Certificate of completion in Full Stack JavaScript Web Development",
     color: "#10B981",
   },
   {
