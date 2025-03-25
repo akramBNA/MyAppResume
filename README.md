@@ -10,8 +10,8 @@ This is a cross-platform React Native mobile application designed to showcase my
 ## Tech Stack
 - Framework: React Native
 - Navigation: React Navigation
-- State Management: (TBD, Redux or Context API)
-- Backend: (TBD, Firebase, Node.js, or other)
+- State Management: React Hooks, Redux
+- Backend: Node.js / Express.js
 
 ## Installation & Setup
 1. Clone the repo.
