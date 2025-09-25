@@ -1,32 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, ActivityIndicator } from "react-native";
 
 const AboutMe = () => {
-  const [loading, setLoading] = useState(true);
-
-  // Simulate a "page load"
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1500); // 1.5s fake loading, you can adjust/remove if tied to real API
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <View style={styles.fullscreenLoader}>
-        <ActivityIndicator size="large" color="#fff" />
-      </View>
-    );
-  }
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <View style={styles.container}>
       <View style={styles.imageWrapper}>
+        {!imageLoaded && (
+          <View style={styles.placeholder}>
+            <ActivityIndicator size="large" color="#999" />
+          </View>
+        )}
         <Image
           source={require("../../assets/profile_picture/profile_picture.png")}
-          style={styles.image}
+          style={[styles.image, { opacity: imageLoaded ? 1 : 0 }]}
+          onLoad={() => setImageLoaded(true)}
         />
       </View>
 
@@ -43,12 +32,6 @@ const AboutMe = () => {
 };
 
 const styles = StyleSheet.create({
-  fullscreenLoader: {
-    flex: 1,
-    backgroundColor: "#000",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   container: {
     flex: 1,
     backgroundColor: "#000",
@@ -62,6 +45,14 @@ const styles = StyleSheet.create({
     borderRadius: 75,
     overflow: "hidden",
     marginBottom: 20,
+    position: "relative",
+  },
+  placeholder: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "#444",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 75,
   },
   image: {
     width: "100%",
