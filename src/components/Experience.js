@@ -20,7 +20,7 @@ const experiences = [
   {
     id: "2",
     company: "Infinitum Tech (formally Marabout Technology)",
-    duration: "Oct 2023 - Present",
+    duration: "Oct 2023 - Jan 2025",
     role: "Full Stack JavaScript Developer",
     details: [
       "Develop and maintain web applications for factory production management.",
