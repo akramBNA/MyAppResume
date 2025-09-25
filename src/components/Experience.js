@@ -8,6 +8,17 @@ const dotSize = 14;
 const experiences = [
   {
     id: "1",
+    company: "Freelance",
+    duration: "Feb 2025 - Present",
+    role: "Freelance Full Stack JavaScript Developer",
+    details: [
+      "Developping a Saas ERP application for a construction company.",
+      "Tech Stack: Angular / NodeJS / PostgreSQL",
+    ],
+    color: "#585b5fff",
+  },
+  {
+    id: "2",
     company: "Infinitum Tech (formally Marabout Technology)",
     duration: "Oct 2023 - Present",
     role: "Full Stack JavaScript Developer",
@@ -18,7 +29,7 @@ const experiences = [
     color: "#3b82f6",
   },
   {
-    id: "2",
+    id: "3",
     company: "EcoClicko GameHub",
     duration: "Sep 2023 - Oct 2023",
     role: "Full Stack JavaScript Developer Intern",
@@ -29,7 +40,7 @@ const experiences = [
     color: "#10b981",
   },
   {
-    id: "3",
+    id: "4",
     company: "RebootKamp (RBK Tunisia)",
     duration: "Oct 2022 - Mar 2023",
     role: "Full Stack JavaScript Intern Developer",
@@ -44,7 +55,7 @@ const experiences = [
     color: "#9333ea",
   },
   {
-    id: "4",
+    id: "5",
     company: "TechnoARGE",
     duration: "Jul 2018 - Aug 2018",
     role: "Intern Developer",
@@ -55,7 +66,7 @@ const experiences = [
     color: "#eab308",
   },
   {
-    id: "5",
+    id: "6",
     company: "Gölcük Municipality",
     duration: "Jul 2016 - Aug 2016",
     role: "Intern Developer",
