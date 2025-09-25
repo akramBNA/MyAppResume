@@ -23,7 +23,7 @@ const AboutMe = () => {
         <Text style={styles.title}>About Me</Text>
         <Text style={styles.description}>
           Hello, my name is <Text style={styles.highlight}>Akram</Text>. I'm a
-          junior full-stack JavaScript developer specializing in MERN and MEAN
+          full-stack JavaScript developer specializing in MERN and MEAN
           stacks. I'm a self-driven person with a strong attention to detail.
         </Text>
       </View>
