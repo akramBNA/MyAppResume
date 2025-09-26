@@ -33,6 +33,7 @@
     "@babel/core": "^7.19.3",
     "@babel/plugin-transform-private-methods": "^7.25.9",
     "@react-native-community/cli": "latest",
+    "eas-cli": "^16.19.3",
     "metro-react-native-babel-preset": "^0.77.0"
   },
   "name": "myappresume",

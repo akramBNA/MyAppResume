@@ -8,6 +8,17 @@
       "android",
       "web"
     ],
-    "newArchEnabled": true
+    "newArchEnabled": true,
+    "extra": {
+      "eas": {
+        "projectId": "dbd8966b-47ff-488b-ab54-18eb6743981c"
+      }
+    },
+    "android": {
+      "package": "com.akram_benaoun.MyAppResume"
+    },
+    "ios": {
+      "bundleIdentifier": "com.akram-benaoun.MyAppResume"
+    }
   }
 }
