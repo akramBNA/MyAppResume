@@ -13,7 +13,7 @@ const experiences = [
     role: "Freelance Full Stack JavaScript Developer",
     details: [
       "Developping a Saas ERP application for a construction company.",
-      "Tech Stack: Angular / NodeJS / PostgreSQL",
+      "Tech Stack: Angular / React / React Native / PostgreSQL..",
     ],
     color: "#585b5fff",
   },
@@ -24,7 +24,7 @@ const experiences = [
     role: "Full Stack JavaScript Developer",
     details: [
       "Develop and maintain web applications for factory production management.",
-      "Tech Stack: Angular / NodeJS / PostgreSQL",
+      "Tech Stack: Angular / React Native / NodeJS / PostgreSQL",
     ],
     color: "#3b82f6",
   },

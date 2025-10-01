@@ -18,7 +18,10 @@
       "package": "com.akram_benaoun.MyAppResume"
     },
     "ios": {
-      "bundleIdentifier": "com.akram-benaoun.MyAppResume"
+      "bundleIdentifier": "com.akram-benaoun.MyAppResume",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     }
   }
 }
